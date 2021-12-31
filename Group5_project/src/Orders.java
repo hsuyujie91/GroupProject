@@ -5,4 +5,5 @@ public class Orders {
 	public void add(ArrayList<meal> order) {
 		orders.add(order);
 	}
+	
 }
