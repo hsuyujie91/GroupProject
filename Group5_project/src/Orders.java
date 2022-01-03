@@ -60,4 +60,22 @@ public class Orders {
 
 	}
 
+	public double fork_ratio() {
+		double fork_number = this.fork_number();
+		double takeout_number = this.takeout_number();
+		double ratio = fork_number / takeout_number;
+		return ratio;
+	}
+
+	// public int mealOrder() {}每個餐點被Order的次數
+
+	public String sheet() {
+		String r =String.format("%.2f", this.fork_ratio());
+		
+		String string = new String();
+		string = "Total Revenue: " + this.total_revenue() + "\n" + "The average price of every order: " + this.average_spending()
+				+ "\n" + "The ratio of fork that takeout order needed: " + r + "\n";
+		return string;
+	}
+
 }

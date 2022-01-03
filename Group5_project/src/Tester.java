@@ -12,13 +12,13 @@ public class Tester {
 		ArrayList<meal> menu_in = new ArrayList<>();
 		ArrayList<meal> menu_out = new ArrayList<>();
 		Orders orders = new Orders();
-		menu_out.add(new meal_takeout("hamburger", 200));
+		menu_out.add(new meal_takeout("Hamburger", 200));
 		menu_out.add(new meal_takeout("French Fries", 50));
 		menu_out.add(new meal_takeout("Coke", 35));
 		menu_out.add(new meal_takeout("Sandwich", 120));
 		menu_out.add(new meal_takeout("Chicken Nuggets", 60));
 		menu_in.add(new meal_DineIn("Chicken Nuggets", 60));
-		menu_in.add(new meal_DineIn("hamburger", 200));
+		menu_in.add(new meal_DineIn("Hamburger", 200));
 		menu_in.add(new meal_DineIn("French Fries", 50));
 		menu_in.add(new meal_DineIn("Coke", 35));
 		menu_in.add(new meal_DineIn("Sandwich", 120));
@@ -37,18 +37,20 @@ public class Tester {
 				String in_out = new String();
 				in_out = scanner.next();
 				if (in_out.equals("in")) {
-					printMenu(menu_in);
+					
 					System.out.println("Set the position of the table");
 
 					int index = 0;
 					int number = 0;
 					int pos = 0;
 					pos = scanner.nextInt();
-
 					ArrayList<meal> order = new ArrayList<>();
+					printMenu(menu_in);
 					System.out.println(
 							"Type in the index and quantity of the meal that you'd like to have in the form of \"index space number\".");
-					Scanner parse = new Scanner(scanner.nextLine());
+					String order_input=new String();
+					order_input=scanner.nextLine();;
+					Scanner parse = new Scanner(order_input);
 					while (parse.hasNextInt()) {
 						index = parse.nextInt();
 						number = parse.nextInt();
@@ -105,7 +107,7 @@ public class Tester {
 		}
 
 	}
-
+	
 	public static void printMenu(ArrayList<meal> menu) {
 		int i = 1;
 		for (meal meal : menu) {
