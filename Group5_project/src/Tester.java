@@ -4,6 +4,11 @@ import java.util.ArrayList;
 public class Tester {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
+		System.out.print("Input the number of tables of your restaurant\n");
+		int[] positions = new int[scanner.nextInt()];
+		for (int i = 0; i < positions.length; i++) {
+			positions[i] = 0;
+		}
 		ArrayList<meal> menu_in = new ArrayList<>();
 		ArrayList<meal> menu_out = new ArrayList<>();
 		Orders orders = new Orders();
@@ -39,6 +44,7 @@ public class Tester {
 					int number = 0;
 					int pos = 0;
 					pos = scanner.nextInt();
+
 					ArrayList<meal> order = new ArrayList<>();
 					System.out.println(
 							"Type in the index and quantity of the meal that you'd like to have in the form of \"index space number\".");
@@ -56,7 +62,11 @@ public class Tester {
 					for (meal meal : order) {
 						((meal_DineIn) meal).setPosition(pos);
 					}
+					positions[pos - 1]++;
 					orders.add(order);
+					System.out.print("Press a to use record function\n" + "Press b to use settle function\n"
+							+ "Press any other button to quit\n");
+					function = scanner.next();
 				} else if (in_out.equals("out")) {
 					printMenu(menu_out);
 					System.out.println(
@@ -79,7 +89,9 @@ public class Tester {
 
 					}
 					orders.add(order);
-
+					System.out.print("Press a to use record function\n" + "Press b to use settle function\n"
+							+ "Press any other button to quit\n");
+					function = scanner.next();
 				}
 
 			} else if (function.equals("b")) {

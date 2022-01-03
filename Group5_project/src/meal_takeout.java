@@ -11,7 +11,9 @@ public class meal_takeout extends meal {
 		super(name, price,quantity);
 		this.fork=fork;
 	}
-
+	public boolean getFork() {
+		return this.fork;
+	}
 	public void setFork(boolean fork) {
 		this.fork = fork;
 
