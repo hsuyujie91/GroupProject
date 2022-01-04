@@ -1,14 +1,14 @@
 
-public class meal {
+public class Meal {
 	private String name = new String();
 	private double price;
 	private int quantity = 0;
 
-	public meal(String name, double price) {
+	public Meal(String name, double price) {
 		this.price = price;
 		this.name = name;
 	}
-	public meal(String name, double price, int q) {
+	public Meal(String name, double price, int q) {
 		this.price = price;
 		this.name = name;
 		this.quantity = q;

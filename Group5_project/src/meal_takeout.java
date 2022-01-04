@@ -1,13 +1,13 @@
 
-public class meal_takeout extends meal {
+public class Meal_Takeout extends Meal {
 	private boolean fork;
 	
 
-	public meal_takeout(String name, double price) {
+	public Meal_Takeout(String name, double price) {
 		super(name, price);
 
 	}
-	public meal_takeout(String name, double price,int quantity,boolean fork) {
+	public Meal_Takeout(String name, double price,int quantity,boolean fork) {
 		super(name, price,quantity);
 		this.fork=fork;
 	}
